@@ -1,0 +1,43 @@
+#A decorator is a function that calls another function as argument
+def decorator(func):
+  
+    def wrapper():
+        print("Before calling the function.")
+        func()
+        print("After calling the function.")
+    return wrapper
+
+
+# Applying the decorator to a function
+@decorator
+
+def greet():
+    print("Hello, World!")
+
+greet()
+
+
+
+
+#method 2
+def fence(func):
+    def add_fence(val):
+        print("This is Ganga")
+        func(val)
+    return add_fence
+    
+@fence
+def game(val):
+    print(val)
+
+game(100)
+
+
+# Returning a function from another function
+def make_mult(f):
+    def mult(x):
+        return x * f
+    return mult
+
+dbl = make_mult(2)
+print(dbl(5))  # Output: 10
