@@ -1,0 +1,32 @@
+#search function returns match object.If there is no match none will be returned
+import re
+pattern="apple"
+text="I have an apple and an orange"
+res=re.search(pattern,text)
+print(res)
+
+
+#Returns a list containing all matches
+import re
+pattern=r'\d+'
+text="I have 10 apples and 20 orange"
+res=re.findall(pattern,text)
+print(res)
+
+
+#Replaces one or many matches with a string
+import re
+text="I have an apple and banana"
+pattern=r"apple"
+replace=r"orange"
+res=re.sub(pattern,replace,text)
+print(res)
+
+
+
+#Returns a list where the string has been split at each match
+import re
+pattern=r'\s+'
+text="I have 10 apples and 20 orange"
+res=re.split(pattern,text)
+print(res)
