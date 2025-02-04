@@ -75,10 +75,10 @@ else:
 
 
 EXAMPLE2:
-The first digit should contain numbers between 6 to 9.
-The rest 9 digit can contain any number between 0 to 9.
-The mobile number can have 11 digits also by including 0 at the starting.
-The mobile number can be of 12 digits also by including 91 at the starting
+#The first digit should contain numbers between 6 to 9.
+#The rest 9 digit can contain any number between 0 to 9.
+#The mobile number can have 11 digits also by including 0 at the starting.
+#The mobile number can be of 12 digits also by including 91 at the starting
 
 #(0|91)? indicates that it is optional to start with 0 or 91
 import re
@@ -93,6 +93,24 @@ if (isValid(s)):
 	print ("Valid Number")	 
 else :
 	print ("Invalid Number") 
+
+
+
+                                **CHECK VALID AADHAR OR NOT**
+#It should have 12 digits.
+#It should not start with 0 and 1.
+#It should not contain any alphabet and special characters.
+#It should have white space after every 4 digits.
+
+import re
+#aadhar="4234 5678 9872 9"
+aadhar="4327 5678 1346"
+pattern=r'^[2-9][0-9]{3}\s[0-9]{4}\s[0-9]{4}$'
+ans=re.fullmatch(pattern,aadhar)
+if ans:
+    print("valid")
+else:
+    print("invalid")
 
 
 
