@@ -1,0 +1,27 @@
+*CONTEXT MANAGER in python is a object that handles the resources.It has 2 key methods __enter__ and __exit__
+*__enter__ handles the setup and __exit__ handles the closing of file or cleanup
+*It is normally used with with statement
+*It is also used to manage resources such as database connections ,threadlocks etc
+*Ex:when too many files are opened we use context manager to manage resources
+
+
+file = open('some_file', 'w')
+try:
+    file.write('Hola!')
+finally:
+    file.close()
+
+*the with statement automatically executes the __enter__ and __exit__ methods
+*instead of using  __enter__ and __exit__ methods we can just use with statement
+
+
+
+
+class File(object):
+    def __init__(self, file_name, method):
+        self.file_obj = open(file_name, method)
+    def __enter__(self):
+        return self.file_obj
+    def __exit__(self, type, value, traceback):
+        self.file_obj.close()
+
