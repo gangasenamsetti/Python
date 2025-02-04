@@ -113,4 +113,17 @@ else:
     print("invalid")
 
 
+                               **CHECK VALID EMAIL OR NOT**
+#An email is a string separated into two parts by the @ symbol, a “personal_info” and a domain
+import re
+email="ganga10@1718.com"
+
+pattern=r'[a-zA-Z0-9._+%-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$'
+
+ans=re.fullmatch(pattern,email)
+if ans:
+    print("valid")
+else:
+    print("Invalid")
+
 
