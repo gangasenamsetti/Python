@@ -30,3 +30,69 @@ pattern=r'\s+'
 text="I have 10 apples and 20 orange"
 res=re.split(pattern,text)
 print(res)
+
+
+                                          **CHECK VALID PASSWORD**
+#^ indicates the start of the string
+#(?=[A-Z]) indicates the string must contain at least one uppercase letter (A-Z).
+#(?=.*\d) ensures that there is atleast one digit .Always use back slash
+#.  indicates that it macthes any charcter except anewline.It is definately important
+# .* ensures that check if the password contains at least one required character (uppercase, lowercase, special character, or digit) anywhere in the string.
+#.{8,} ensures that total length should be minimum 8 or more
+#$ marks the end of the string
+# to check atleast one upper or lower or something we use --->?=
+
+1.Must start with uppercase
+2.Atleast one uppercase
+3.Atleast one lower case
+4.Atleast one digit
+5.Length must be minimum of 8
+
+import re
+password="Ganga@10082003"
+pattern=r'^(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=])(?=.*\d).{8,}$'
+res=re.findall(pattern,password)
+if res:
+    print("valid")
+else:
+    print("Not valid")
+
+
+
+                                              **CHECK VALID MOBILE NUMBER**
+EXAMPLE1:
+#number should contain 10 digits
+#number should starts with 9 or 8
+import re
+password="7808397548"
+pattern=r'[98][0-9]{9}'
+res=re.findall(pattern,password)
+if res:
+    print("valid")
+else:
+    print("Not valid")
+
+
+
+EXAMPLE2:
+The first digit should contain numbers between 6 to 9.
+The rest 9 digit can contain any number between 0 to 9.
+The mobile number can have 11 digits also by including 0 at the starting.
+The mobile number can be of 12 digits also by including 91 at the starting
+
+#(0|91)? indicates that it is optional to start with 0 or 91
+import re
+def isValid(s):
+	Pattern = re.compile("(0|91)?[6-9][0-9]{9}")
+	return Pattern.fullmatch(s)
+
+#s = "659908397548"#invalid bcz it has 12 digits and it doesnt starts with 0 or 91
+#s="919908397548"  #valid
+s="06558678823"  #valid
+if (isValid(s)): 
+	print ("Valid Number")	 
+else :
+	print ("Invalid Number") 
+
+
+
