@@ -127,3 +127,20 @@ else:
     print("Invalid")
 
 
+                                       **CHECK VALID URL OR NOT**
+*Since forward slash(/) is a special character we use \/
+*since dot(.) is also used in diff way to differentiate we use \.
+import re
+url="https://www.google.com"
+#url="www.googlehgsayug.com"
+#url="asvgh://www.google.com"
+#url="www.google"
+#url="google.com"
+pattern=r'^(https:\/\/www.|http:\/\/www.|www.)[a-zA-Z._\-]+\.[a-z]{2,3}$'
+res=re.match(pattern,url)
+if res:
+    print("valid")
+else:
+    print("Not valid")
+
+
