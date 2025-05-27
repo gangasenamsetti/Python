@@ -1,0 +1,1420 @@
+Input and output
+
+n=int(input()) //integer input
+n=float(input()) //float input
+n=input() //string input
+
+print(n) //output
+print(n,end=" ") //print res side by side
+print(n,end="\n") //prints in new line
+
+
+
+     ROUND UP TO SPECIFIC DIGITS
+q=123/23
+print(round(q,3)) #outputs the result upto 3 digits after decimal    (or)
+
+print(f"{q:.2f}")
+ 
+
+
+             LIST AS INPUT
+n=int(input()) #length of list
+ll=list(map(int,input().split()))#input list int
+print(ll)
+print([i for i in ll])
+
+
+            TUPLE AS LIST
+n=int(input()) #length of list
+s=input()
+ll=tuple(map(int,s.split())) #input list int
+print(ll)
+
+
+**strings and tupleare immutable
+**list,dictionary are mutable(changable)
+**list and dictionary can have different data types
+
+**Hash (#) is used for single line comments
+** for multi line comments """ is used
+
+**for n=input() if we give integer(7) is directly converted into string
+**print(type(n))   type displays the type 
+**to represent string we can either use single quotes (' ') or double quotes(" ")
+
+
+                                                *********PYTHON DATATYPES************
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+
+b = "Hello, World!"  //here -2 will not be included
+print(b[-5:-2])//orl
+***strip()-------->strip() function is used to remove whitespaces from starting and ending
+a = " Hello, World! "
+print(a.strip())//Hello, World!
+
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+
+***conditional or terenary operators------>? :
+**SPECIAL SYMBOLS--->c="[@_!#$%^&*()<>?/|{}~:].,"
+**ke=sorted(d,key=d.get)//sorting by keys
+
+
+import math
+math.sqrt(100)//10.0
+
+import math as M
+ M.sqrt(100) //10.0
+
+ from math import *
+ sqrt(100) //10.0
+
+
+
+**maxi=Integer.MIN_VALUE; //in java
+**maxi=float("inf")  or  math.inf//python for initializing to maximum number
+  mini=float('-inf')   //for initializing to minimum number
+***int min=INT_MAX; //in cpp
+** l.append([arr[i],arr[i-1]]) //for double lists [[1,2],[2,3],[3,4]]
+**vector<vector<int>> temp; //for double lists in cpp
+    temp.push_back({arr[i-1],arr[i]});
+
+
+
+
+Type Casting
+
+* x=int(2.8)  //2
+  y=float(1)  //1.0
+  z=str(2)    //2
+
+** for in in range(1,6)  --->1 2 3 4 5   and 6 is not included  last index is not included
+**for negative indexing  ---> minus(-) indicates to start from back and last index is not included
+  b = "Hello, World!"
+  print(b[-5:-2])
+
+** s="Good morning!"
+** s.lower() //converts to lowercase
+**s.upper() //converts to uppercase
+** s.strip() //removes whitespaces
+** s.replace('G','H') //replaces
+**s.split(",")
+
+**string + integer combo gives error
+  example: print("hello"+5)  //gives error
+
+
+#CHECK IF A NUMBERIS POWER OF 2
+def check_pow_2(num):
+
+    while(num!=1):
+        if num%2!=0:
+            return False
+        num//=2
+    return True
+
+num=8
+print(check_pow_2(num))
+
+
+
+#CHECK PERFECT NUMBER OR NOT
+# Perfect Number--->sum of all factors is equal to num but expect itself
+def perfect(num):
+    s=0
+    for i in range(1,num):
+        if num%i==0:
+            s+=i
+    return s==num
+
+num=6
+print(perfect(num))
+        
+
+
+
+*There are four collection data types in the Python programming language:
+
+1.List is a collection which is ordered and changeable. Allows duplicate members.
+2.Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+3.Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+4.Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+LIST
+example:
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(2,"mango") //adds at particular index
+thislist.append("blackberry") //adds at last
+thislist.remove("banana")
+thislist.pop(1) //pop removes element at particular index
+thislist.pop() //removes last element
+thislist.clear() //removes list
+thislist.reverse()
+thislist.sort() //sorts in ascending order
+thislist.sort(reverse=True) //sorts in descending order
+**By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters
+ 
+example:
+ thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)  //extend appends both lists 
+print(thislist)
+
+
+SHORT CUT FOR FOR LOOP
+Example:
+
+Based on a list of fruits, you want a new list, containing only the fruits with the letter "a" in the name.
+
+Without list comprehension you will have to write a for statement with a conditional test inside:
+
+ExampleGet your own Python Server
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+
+print(newlist)
+
+
+shortest form is:
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+
+     CREATE NEW LIST
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+____________________________________________________________________
+                                              DICTIONARY
+dict={
+    "name":"ganga",
+    "age":12
+    "clg":"aditya",
+    "educated":True
+}
+print(dict["name"]) #to acces the values
+pint(dict.pop(key)) #delete particular key pair
+print(dict.ppitem())  #deletes the last key pair value
+
+
+
+my_dict = {'a': 2, 'b': 3, 'c': 1, 'd': 4}
+
+for i in my_dict:
+    print(i) #to get keys
+
+for i in my_dict:
+    print(my_dict[i]) #to get values
+
+       
+nums=[1,3,5,7] # to convert a list to dictionary
+
+ dict={}
+        for i in nums:
+            if i in dic:
+                dic[i] += 1
+            else:
+                dic[i] = 1
+        for key, value in dic.items():
+            if value == 1:
+                return key
+
+
+
+
+#COUNTER IN DICTT
+from collections import Counter
+ll=[2,1,3,2,1,5,2]
+d=Counter(ll)
+for k,v in d.items():
+    print(k,v)
+
+maxi=max(d.keys())
+print(maxi)
+mini=min(d.values())
+print(mini)
+
+
+      NESTED DICTIOAR
+student={
+    "name":"prasad",
+    "clg":"aditya",
+    "subjects":{
+        "phy":76,
+        "che":56,
+        "math":79
+        
+    }
+    
+}
+print(student)
+print(student["subjects"])
+print(student["subjects"]["phy"])
+
+
+
+
+student={
+    "name":"prasad",
+     "age":24,
+     "clg":"abc"
+    
+}
+print(len(student)) #returns length of dic
+print(student.keys()) #returns keys
+print(list(student.keys())) #returns keys in list
+print(list(student.values()))
+print(student.get("name"))  #same as student["name"] 
+
+
+print(student.items()) #returns (key,val) pairs in the form of tuple
+print(list(student.items()))
+pairs=list(student.items())
+print(pairs)
+
+
+student.update({"location":"delhi"})
+print(student)
+
+
+___________________________________________________________
+
+                                          SET
+**set is unmutable and cannot be stored in list and dict as list and dict are mutabale
+**set is unordered
+**ex:numbers={1,2,34,5}
+**stu={}  #it is a type of dict
+**stu=set()  //to create empty set 
+
+
+
+PRIME NUMBER OR NOT-->divisible 1 and itself
+def prime(n):
+    if n<=1:
+        return False
+    for i in range(2,n):
+        if n%i==0: #if it has factors rather than 1 and itself it is not prime
+            return False
+    return True
+x=int(input())
+print(prime(x))
+
+
+
+from math import sqrt
+def prime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(sqrt(n))+1):
+        if n%i==0: 
+            return False
+    return True
+x=int(input())
+print(prime(x))
+
+
+def prime(n):
+    if n<=1:
+        return False
+    c=0
+    for i in range(1,n+1):
+        if n%i==0: 
+            c+=1
+    if c==2: //if it has only 2 factors 1 and itself it is prime
+        return True
+    return False
+x=int(input())
+print(prime(x))
+
+***add list items to set ---> nums[:]=set(nums)
+
+
+
+                     DATE AND TIME
+import datetime
+a=datetime.datetime.now()  #displays time and date of now
+print(a)
+
+b=datetime.date.today()  #displays today date
+print(b)
+
+c=datetime.date(2025,1,27)   #set time
+print(c)
+
+print(dir(datetime))  #
+
+print(datetime.date.today().year)
+print(datetime.date.today().month)
+print(datetime.date.today().day)
+
+print(datetime.time(hour=2,minute=23,second=56))
+
+print(datetime.time(hour=2,minute=23,second=56).hour)
+
+print(datetime.time(hour=2,minute=23,second=56).minute)
+
+print(datetime.time(hour=2,minute=23,second=56).second)
+
+
+
+c=datetime.date(2025,1,27) 
+d=datetime.date(2028,8,15)
+print(d-c)
+
+
+_________________________________________________
+________________________________________________________________________________________
+
+                                              LAMBDA FUNCTION
+x = lambda a : a + 10
+print(x(5))
+
+
+x = lambda a, b : a * b
+print(x(5, 6))
+
+
+
+                                                 GENERATOR IN PYTHON
+*A generator is a special type of function that uses "yield" instead of return 
+*Yeild produces series of multiple results where return returns only one result
+
+def fun(max):
+    cnt = 1
+    while cnt <= max:
+        yield cnt
+        cnt += 1
+
+ctr = fun(5)
+for n in ctr:
+    print(n)
+o/p: 1 2 3 4 5
+
+exa,ple2:
+def even_numbers(num):
+    for i in range(0,num,2):
+        yield(i)
+li=even_numbers(10)
+
+for i in even_numbers(6):
+    print(i)
+  
+
+                                                    ENUMERATE FUNCTION
+*Enumerate function takes list or tuple or string as input and returns output in the format of (index,value)
+example:
+l=["milk","bread","jam"]
+for i,name in enumerate(l):
+    print(i,name)
+
+for name in enumerate(l):
+    print(name)
+    
+print(list(enumerate(l)))
+
+
+                                                    zip in python
+*Zip is used to combine 2 lists or strings
+*It is used to return as a pair.
+*when 2 lists are not same size then it returns it minimum length pairs.If we want to have the longest length pair then we use zip_longest and that is automatically filled with NONE
+If we want to use some value instead of None we use fillvalue
+
+
+a = ("John", "Charles", "Mike")
+b = ("Jenny", "Christy", "Monica", "Vicky")
+x = zip(a, b)
+for i,y in zip(a,b):
+       print(f"{i} {y}")
+
+
+
+from itertools import zip_longest
+a = ("John", "Charles", "Mike")
+b = ("Jenny", "Christy", "Monica", "Vicky")
+x = zip(a, b)
+for i,y in zip_longest(a,b,fillvalue=0):
+    print(f"{i} {y}")
+
+ 
+ 
+
+                                                  PERMUTATION AND COMBINATION
+*combination returns unique combinations but permutations returns all possible combinations with positions exchange also
+from itertools import combinations
+a = ["John", "Charles", "Mike"]
+
+for i in combinations(a,2):
+    print(i)
+
+
+
+from itertools import permutations
+a = ["John", "Charles", "Mike"]
+
+for i in permutations(a,2):
+    print(i)
+                
+                                                         
+                                                               FILTER IN PYTHON
+*The filter() method filters the given sequence with the help of a function that tests each element in the sequence to be true or not.
+*filterfalse is used to return false values.we have to import it from itertools
+example1:
+a=[12,45,25,23,78]
+def vote_eligible(num):
+    if num>=18:
+        return True
+    else:
+        return False
+        
+x=filter(vote_eligible,a)
+for i in x:
+    print(i)
+
+               (or)
+
+a=[12,45,25,23,78]
+
+x=filter(lambda age:age>=18,a)
+for i in x:
+    print(i)
+
+
+
+example2:
+def even(n):
+    return n % 2 == 0
+
+a = [1, 2, 3, 4, 5, 6]
+b = filter(even, a)
+
+print(list(b))
+
+________________________________________________________________________________________________________________________________________________________
+                                                  OOPS IN PYTHON
+**class name should start with capital
+class Student:
+    name="ganga"
+    
+s1=Student() #creating object for student class
+print(s1.name)
+
+
+**in python constructor is __init__ ie.initialiser and it contains self as parameter
+  ex:     def __init__(self):
+
+**constructor invokes when object is created for class
+** self parameter is reference to current instance of class and is used to access variables of class
+ class Student:
+    def __init__(self,name):
+        
+        self.name=name
+        print("hello I am constructor")
+    
+s1=Student("prasad") #creating object for student class
+print(s1.name)
+
+
+
+
+
+class Student:
+    def __init__(self,name,marks):
+        
+        self.name=name
+        self.marks=marks
+        print("hello I am constructor")
+    
+s1=Student("prasad",98) #creating object for student class
+print(s1.name,s1.marks)
+
+
+
+**when there is same common attribute we declare as class attribute but there is diff names for diff students we declare as obj attributes ie,accessed using self.name like that
+** for object attribute more preference is given compared to class att when same names are used for both class and obj attributes
+
+class Student:
+    college_name="ABC clg" #class attribute
+    def __init__(self,name,marks):
+        
+        self.name=name  #object attribute
+        self.marks=marks
+        print("hello I am constructor")
+    
+    def hello(self): # note if we use print in function we doesnot need to use print in calling directly we can use s1.hello() or if we use return we have to use print 
+        print("hello welcome to python")
+    
+s1=Student("prasad",98) #creating object for student class
+print(s1.name,s1.marks)
+print(s1.college_name) # or we can use print(Student.college_name)
+print(Student.college_name)
+
+#s1.hello() 
+
+
+class Bank:
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+        
+    def deposit(self,amount):
+        self.balance+=amount
+        print(self.balance)
+    
+    def withdraw(self,amount):
+        if amount>=self.balance:
+            print("No sufficient balance is available")
+        else:
+            self.balance-=amount
+            print(self.balance)
+            
+b= Bank("ganga",100)
+b.deposit(50)
+
+b.withdraw(20)
+
+
+           SHOPPNG CART
+class ShoppingList:
+    def __init__(self):
+        self.items=[]
+       
+    def add(self,item):
+        self.items.append(item)
+    
+    
+    def remove(self,item):
+        for i in self.items:
+            if i==item:
+                self.items.remove(i)
+        
+    def show(self):
+        for i in self.items:
+            print(i+" ")
+        
+s=ShoppingList()
+s.add("tomato")
+s.add("potato")
+s.add("carrot")
+s.remove("potato")
+s.show()
+
+
+method2:addig itemname and quantity
+class ShoppingList:
+    def __init__(self):
+        self.items=[]
+       
+    def add(self,item_name,quantity):
+        item=(item_name,quantity)
+        self.items.append(item)
+    
+    
+    def remove(self,item):
+        for i in self.items:
+            if i[0]==item:
+                self.items.remove(i)
+        
+    def show(self):
+        for i in self.items:
+            print(i[0]+" "+str(i[1]))
+        
+s=ShoppingList()
+s.add("tomato",10)
+s.add("potato",20)
+s.add("carrot",20)
+s.remove("potato")
+s.show()
+______________________________
+
+
+
+
+class Student:
+    college_name="ABC clg"
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+    
+    def hello(self):
+        print("hello welcome to python")
+        
+    def get_marks(self):
+        return self.marks
+s1=Student("prasad",98) #creating object for student class
+s1.hello()
+print(s1.get_marks())
+
+_______________________________________
+example1: create a class called student that takes name and marks of 3 subjects and calculate average for 3 subjects
+
+method1:
+class Student:
+    def __init__(self,name,m1,m2,m3):
+        self.name=name
+        self.m1=m1
+        self.m2=m2
+        self.m3=m3
+    def average(self):
+        sum=self.m1+self.m2+self.m3
+        res=sum/3
+        return res
+s1=Student("ganga",10,20,30)
+print("Hi",s1.name,"your avg score is:",s1.average())
+
+
+method2: #using list
+class Student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+        
+    def average(self):
+        s=0
+        for val in self.marks:
+            s+=val
+        return s/(len(self.marks))
+        
+       
+s1=Student("ganga",[10,20,30])
+print("Hi",s1.name,"your avg score is:",s1.average())
+
+s1.name="prasad"
+print("Hi",s1.name,"your avg score is:",s1.average())
+_____________________________________________________________
+                  STATIC METHOD
+** Static method doesnot use self parameter(works at class level)
+**It uses @staticmethod decorator above the function
+
+class Student:
+    @staticmethod
+    def hello():
+        print("hello Hi gm")
+       
+s1=Student()
+s1.hello()
+______________________________________________
+example:create bank class with 2 attributes balance and accountnumber.create methods for debit and credit and display balance
+
+
+method1
+class Bank:
+    amount=100
+    def __init__(self,balance,acc_no):
+        self.balance=balance
+        self.acc_no=acc_no
+    def debit(self):
+        return self.balance-self.amount
+    def credit(self):
+        return self.balance+self.amount
+b1=Bank(200,123)
+print(b1.credit())
+
+method2:
+
+class Bank:
+    def __init__(self,balance,acc_no,amount):
+        self.balance=balance
+        self.acc_no=acc_no
+        self.amount=amount
+    def debit(self):
+        return self.balance-self.amount
+    def credit(self):
+        return self.balance+self.amount
+b1=Bank(200,123,100)
+print(b1.credit())
+print(b1.debit())
+
+method3:
+
+class Bank:
+    
+    def __init__(self,balance,acc_no):
+        self.balance=balance
+        self.acc_no=acc_no
+        
+    def debit(self,amount):
+        self.balance-=amount
+        print("amount debited ",self.print_balance())
+        
+    def credit(self,amount):
+        self.balance+=amount
+        print("amount credited ",self.print_balance())
+    
+    def print_balance(self):
+        print(self.balance)
+        
+b1=Bank(200,123)
+b1.credit(500)
+b1.debit(100)
+_____________________________________________________________
+                PRIVATE AND PUBLIC 
+**To indicate a variable or a function as private we use two underscores(__)
+
+class Person:
+    __name="ganga"  #__name displays name is private variable
+    
+    def __hello(self):
+        print("hello person")
+
+p1=Person()
+print(p1.__name) #generates error
+print(p1.__hello()) #generates error as hello fun is private
+
+
+
+**to change __hello func to public this method can be used
+
+
+class Person:
+    __name="ganga"  #__name displays name is private variable
+    
+    def __hello(self):
+        print("hello person")
+    
+    def welcome(self): #to change __hello func to public this method can be used
+        self.__hello()
+
+p1=Person()
+p1.welcome()
+_________________________________________________________________
+                     INHERITANCE
+1.single inheritance
+2.multilevel inheritance   --->can have multiple derived classes with one base class
+3.multiple inheritance  --->can have a derived class with multiple base classes
+
+
+#single inheritance
+class Car:
+    color="black"
+    def start(self):
+        print("car started")
+    def stop(self):
+        print("car stopped")
+class Audi(Car):
+    def __init__(self,name):
+        self.name=name
+        print("hello audi")
+    def print():
+        print("I am displaying something")
+        
+a=Audi("abc")
+a.start()
+print(a.color)
+
+
+
+#multi level inheritance
+class Car:
+    def start(self):
+        print("car started")
+    def stop(self):
+        print("car stopped")
+        
+class Audi(Car):
+    def __init__(self,name):
+        self.name=name
+        print("hello audi")
+    def print(self):
+        print("I am displaying something")
+        
+class Toyota(Audi):
+    def __init__(self,color):
+        self.color=color
+        
+a=Toyota("abc")
+a.start()
+a.print()
+
+
+#multiple inheritance
+class A:
+    var1="class A variable"
+class B:
+    var2="class B variable"
+class C(A,B):
+    var3="class C variable"
+
+obj=C()
+print(obj.var1)
+print(obj.var2)
+print(obj.var3)
+
+____________________________________________________
+               POLYMORPHISM
+**OPERATOR OVERLOADING-->when same operator has diff meaning and can be used in diff contects 
+  ex:add as concate,add and merge etc
+
+//COMPLEX NUMBER
+class Complex:
+    def __init__(self,real,img):
+        self.real=real
+        self.img=img
+    
+    def showNum(self):
+        print(self.real,"i+",self.img,"j")
+
+num1=Complex(2,3)
+num1.showNum()
+
+num2=Complex(4,6)
+num2.showNum()
+
+
+//ADD 2 COMPLEX NUMBERS
+class Complex:
+    def __init__(self,real,img):
+        self.real=real
+        self.img=img
+    
+    def showNum(self):
+        print(self.real,"i+",self.img,"j")
+    
+    def add(self,num2):
+        newReal=self.real+num2.real
+        newImg=self.img+num2.img
+        return Complex(newReal,newImg)
+
+num1=Complex(2,3)
+num1.showNum()
+
+num2=Complex(4,6)
+num2.showNum()
+
+num3=num1.add(num2)
+num3.showNum()
+
+
+____________________________________________________________________________
+##program for prime number
+def isPrime(n):
+    count=0
+    for i in range(2,n):
+        if(n%i==0):
+            count+=1
+        if(count==2):
+            return True
+        else:
+            return False
+n=int(input())
+print(isPrime(n))
+______________________________________________________
+##mega prime(index and number also must be prime)
+def isPrime(n):
+    count=0
+    if(n==1):
+        return "notprime"
+    for i in range(2,n):
+        if(n%i==0):
+            count+=1
+    if(count==0):
+        return "prime"
+    else:
+        return "not prime"
+
+n=int(input())   
+c=2
+i=0
+while(c<=n):
+    if(isPrime(c)=="prime"):
+       i+=1
+       if(isPrime(i)=="prime"):
+           print(c)
+    c+=1
+_______________________________
+## twin primes
+def isPrime(n):
+    count=0
+    if(n==1):
+        return "notprime"
+    for i in range(2,n):
+        if(n%i==0):
+            count+=1
+    if(count==0):
+        return "prime"
+    else:
+        return "not prime"
+def isTwin(n):
+    for i in range(0,n):
+        if((isPrime(n)=="prime" ) & (isPrime(n+2)=="prime" ) & (isPrime(n+1)=="not prime")):
+            return True
+        else:
+            return False
+n=int(input())
+for i in range(1,n):
+    if(isTwin(i)):
+        print(i,i+2)
+__________
+  "{:.2f}".format(res) // upto 2 decimal points
+ x,y=[int(x) for x in input().split()] // to take inputs side by side
+______________________
+##ugly number
+#include<bits/stdc++.h>
+using namespace std;
+int isUgly(int n)
+{
+    if (n == 1)
+        return 1;
+    if (n <= 0)
+        return 0;
+        
+    if (n % 2 == 0)
+        return isUgly(n / 2);
+    if (n % 3 == 0)
+        return isUgly(n / 3);
+    if (n % 5 == 0)
+        return isUgly(n / 5);
+}
+int main()
+{
+    int no = isUgly(14);
+    if (no == 1)
+        cout << "Yes" << endl;
+    else  {
+        cout<<"no";
+    }
+}
+________________________
+                     ***HAPPY NUMBER******
+n=int(input())
+s=0
+while(s!=1 and s!=4):
+    s=0
+    while(n):
+        r=n%10
+        s=s+(r*r)
+        n//=10
+    n=s
+if(s==1):
+    print("True")
+else:
+    print("False")
+_____________________________________________
+##perfect number using testcases
+import math
+def isPerfect(n):
+    c=1
+    i=2
+    sq=int(math.sqrt(n))+1
+    for i in range(2,sq):
+        if(n%i==0):
+            c+=i
+            c+=n//i
+        i+=1       
+    if(c==n):
+        return "perfect number"
+    else:
+        return "not perfect number"
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    print(isPerfect(n))
+
+_____________________________
+##semi prime----->first it should be a factor and it should be a prime
+def isPrime(n):
+    if(n<1):
+        return False
+    else:
+        for i in range(2,n):
+            if(n%i==0):
+                return False
+        return True
+def isSemiprime(n):
+    flag=0
+    for i in range(2,n+1):
+        if((n%i==0 )& (isPrime(i)==True)):
+            if(isPrime(n//i)==True):
+                flag=1
+                break
+    return flag==1         
+n=int(input())
+print(isSemiprime(n))
+
+__________
+##automorphic number(square of that number such that the original number should be present in that squared number)
+def isAutomorphic(n):
+    #digi_last=n%10
+    sq=n*n
+    while(n!=0):
+        if((n%10)!=(sq%10) ):
+            return false
+        n//=10
+        sq//=10
+    return true 
+n=int(input())
+print(isAutomorphic(n))
+__________________________________________________
+***List is a collection which is ordered and changeable. Allows duplicate members.
+***Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+***Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+***Dictionary is a collection which is ordered** and changeable. No duplicate members.
+s=input()
+dic={ }
+for i in s:
+    if i not in dic:
+        dic[i]=1
+    else:
+        dic[i]+=1
+for k in dic.keys() :
+    print(k,dic[k])
+
+//2283,2363,2103,2325,1742
+_______________________________________________________________
+*****************UNIQUE ELEMENTS*******************
+def unique(list1):
+    unique_list = []
+    for x in list1:
+        if x not in unique_list:
+            unique_list.append(x)
+    for x in unique_list:
+        print(x,end=" ")
+n=int(input())
+list1 = list(map(int,input().split()))
+unique(list1)
+_______________________________________________________
+**TO FIND INDEX IN LIST
+list2 = ['cat', 'bat', 'mat', 'cat', 'pet']
+print(list2.index('bat')) //1
+
+** REVERSE OF A STRING
+ "good morning"[::-1]  //gninrom doog'
+
+**return max(dict, key=dict.get) //maximum key in dict
+
+ for i in sorted(key_value.keys()): // sorting by keys
+        print(i, end=" ")
+
+**sorted(d.items(), key=lambda x: x[1],reverse=True)  //sorting in decreasing order
+**sorted(d.items(), key=lambda x: x[1]) //sorting in ascending order
+_________________________________________________
+                 ***VOWEL CONSONENT PAIRS IN A STRING******
+def vow(n):
+    n=n.lower()
+    if(n=='a' or n=='e' or n=='i' or n=='o' or n=='u'):
+        return True
+    return False
+def conso(n):
+    n=n.lower()
+    if(n.isalpha() and n!='a' and n!='e' and n!='i' and n!='o' and n!='u'):
+        return True
+    return False
+s=input()
+c=0
+i=0
+j=len(s)-1
+while(i<j):
+    if((vow(s[i]) and conso(s[j])) or (conso(s[i])) and vow(s[j])):
+        c+=1
+    i+=1
+    j-=1
+print(c)
+ _________________________________________
+                       ****CLOSEST PALINDROME********
+def palin(n):
+    t=n
+    rev=0
+    while(t):
+        rev=rev*10+(t%10)
+        t//=10
+    if(rev==n):
+        return True
+    else:
+        return False
+n=int(input())
+maxi=n
+mini=n
+a=0
+b=0
+while(maxi):
+    if(palin(maxi)):
+        a=maxi
+        break
+    maxi+=1
+while(mini):
+    if(palin(mini)):
+        b=mini
+        break
+    mini-=1
+if(abs(n-a)==abs(n-b)):
+    print(a,b)
+elif(a<b):
+    print(a)
+else:
+    print(b)
+________________________________
+                                  **EXTRACTING ALL SUBSTRINGS FROM A STRING************
+str = "ABC";  
+n = len(str);  
+#For holding all the formed substrings  
+arr = [];  
+#This loop maintains the starting character  
+for i in range(0,n):  
+    #This loop will add a character to start character one by one till the end is reached  
+    for j in range(i,n):  
+        arr.append(str[i:(j+1)]);  
+   
+#Prints all the subset  
+print("All subsets for given string are: ");  
+for i in arr:  
+    print(i);
+output:
+All subsets for given string are: 
+A
+AB
+ABC
+B
+BC
+C
+____________________________________________________________________________________________________
+                                 ***PREFIX SUM ALGORITHM*******
+arr=[1,2,3,4,5]
+for i in range(1,len(arr)):
+    arr[i]+=arr[i-1]
+print(arr)
+__________________________________________________________________
+                    ***********SUBLISTS IN LIST(IT IS WORKING ONLY IN FUNCTION)
+arr=[1,4,2,5,3]
+l=[]
+for i in range(0,len(arr)+1): #including the last index
+    for j in range(i,len(arr)+1): //only i in this loop returns without empty substring    and with i+1 in this loop returns empty substring also
+        l.append(arr[i:j])
+print(l)
+o/p:
+[[], [1], [1, 4], [4], [1, 4, 2], [4, 2], [2], [1, 4, 2, 5], [4, 2, 5], [2, 5], [5], [1, 4, 2, 5, 3], [4, 2, 5, 3], [2, 5, 3], [5, 3], [3]]
+___________________________________________________________________________________
+                        ******HCF OF ARRAY OF ELEMENTS*********
+def hcf(m,n):
+    if(n>m):
+        m,n=n,m
+    if(n==0):
+        return m
+    return hcf(n,m%n)
+m=int(input())
+l=list(map(int,input().split()))
+t=hcf(l[0],l[1])
+for i in range(1,m):
+    t=hcf(t,l[i])
+print(t)
+_________________________________________________________________
+                        ************LCM OF ARRAY OF ELEMENTS******************
+def lcm(m,n):
+    if(m%n==0):
+        return m
+    if(n%m==0):
+        return n
+    c=max(m,n)
+    while(1):
+        if(c%m==0 and c%n==0):
+            return c
+        c+=1
+m=int(input())
+l=list(map(int,input().split()))
+t=lcm(l[0],l[1])
+for i in range(1,m):
+    t=lcm(t,l[i])
+print(t)
+____________________________________________________________________________________________________
+                             ***OCTAL TO BINARY**********
+def OctToBin(n):
+    return bin(int(n, 8))
+onum = input()
+bnum = OctToBin(onum)
+print( bnum[2:])
+___________________________________________
+                        ***BINARY TO OCTAL****
+t=int(input())
+for _ in range(t):
+    bnum = input()
+    onum = int(bnum, 2)#this converts the string to integer
+    onum = oct(onum)
+    print(onum)#0o33
+    print(onum[2:]) #This skips the starting two numners that is 0o
+    #33
+_________________________________________________________________
+           ***DICTIONARY****
+l=[1,2,3,1]
+dic={}
+for i in l:
+    if i not in dic:
+        dic[i]=1
+    else:
+        dic[i]+=1
+for i in range(len(dic)):
+    print(l[i]) //l[i] gives elements and dic[l[i]] gives frequency of elements
+# for k,v in dic.items():
+#     print(k,v)
+
+____________________________________________________
+                   **COUNT NUMBER OF SUBSTRINGS IN A STRING
+s1="ababababa"
+s2="aba"
+c=0
+for i in range(len(s1)):
+    if s1[i:i+len(s2)]==s2:
+        c+=1
+print(c)  #4
+
+    (or)
+
+s1="banana"
+s2="na"
+c=0
+for i in range(len(s1)-len(s2)+1):
+    if s1[i:i+len(s2)]==s2:
+        c+=1
+print(c)   #2
+_________________________________________________________________
+                 ** Substrings of size K with K distinct chars***
+Example 1:
+
+
+Input: s = "abcabc", k = 3
+Output: ["abc", "bca", "cab"]
+Example 2:
+
+
+Input: s = "abacab", k = 3
+Output: ["bac", "cab"]
+Example 3:
+
+
+Input: s = "awaglknagawunagwkwagl", k = 4
+Output: ["wagl", "aglk", "glkn", "lkna", "knag", "gawu", "awun", "wuna", "unag", "nagw", "agwk", "kwag"]
+Explanation: 
+Substrings in order are: "wagl", "aglk", "glkn", "lkna", "knag", "gawu", "awun", "wuna", "unag", "nagw", "agwk", "kwag", "wagl" 
+"wagl" is repeated twice, but is included in the output once.
+
+
+
+s1="awaglknagawunagwkwagl"
+
+k=4
+a=[]
+c=0
+for i in range(len(s1)):
+    for j in range(i,len(s1)):
+        s2="".join(set(s1[i:j+1]))
+        if len(s1[i:j+1])==k and len(s2)==k:
+            if s1[i:j+1] not in a:
+                a.append(s1[i:j+1])
+            
+print(a)
+
+_________________________________________
+                   STACKS AND QUEUES
+from collections import deque
+numbers=deque()
+numbers.append(10)
+numbers.append(12)
+numbers.append(34)
+numbers.append(14)
+numbers.append(32)
+numbers.append(56)
+print(numbers)
+last_item=numbers.pop() #implementation for stack
+print(last_item)
+print(numbers)
+
+first_item=numbers.popleft()  #implementation for queue
+print(first_item)
+print(numbers)
+____________________________________________
+             #UST PRACTICE PROBLEMS
+Given an array. Select the alternative elements in the array starting from second position. Reverse these elements and place them in the array
+
+For example
+Input : 1 5 6 7 8 9 0
+Output : 1 9 6 7 8 5 0
+
+
+l1=[1,5,6,7,8,9,0]
+l2=[]
+for i in range(1,len(l1),2):
+    l2.append(l1[i])
+l2=l2[::-1]
+
+ind=1
+for i in l2:
+    l1[ind]=i
+    ind+=2
+        
+        
+print(l1)
+________________________________________________________________________________
+                                                   **COLLECTIONS MODULE**
+
+DEQUE
+#It is the optimized list for quicker append and pop operations from both sides of the container.
+from collections import deque
+vowels=['a','e','i','o','u']
+a=deque(vowels)
+a.append('x')
+a.appendleft('z')
+a.pop()
+a.popleft()
+print(a)
+
+
+CHAINMAP
+from collections import ChainMap
+course1={1:"python",2:"java"}
+course2={2:"dbms",4:"sql"}
+all=ChainMap(course1,course2)
+course3={5:"abc",6:"ghs"}
+all=all.new_child(course3)
+print(all)
+
+
+
+NAMEDTUPLE
+#named tuple creates a simpler way to create a class like format 
+that we can access throug indexes and key-value
+from collections import namedtuple
+Student = namedtuple('Student', ['name', 'age', 'DOB'])
+S = Student('Nandini', '19', '2541997')
+# Access using index
+print(S[1])
+print("The Student name using keyname is : ", end="")
+print(S.name)
+
+
+ORDEREDDICT
+#Maintains the order in which we inserted
+from collections import OrderedDict
+od=OrderedDict()
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+od.pop('a')
+od[1]='a'
+  
+for key, value in od.items(): 
+    print(key, value)
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
