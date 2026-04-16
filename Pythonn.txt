@@ -241,7 +241,23 @@ def fun(nums):
             dictt[i]+=1
         else:
             dictt[i]=1
+    
     print(sorted(dictt.values()))
+        
+nums=[1,1,4,2,5,5,6,3,3,0]
+print(fun(nums))
+
+
+def fun(nums):
+    dictt={}
+    c=0
+    for i in nums:
+        if i in dictt:
+            dictt[i]+=1
+        else:
+            dictt[i]=1
+    for k,v in dictt.items():
+        print(k,v)
         
 nums=[1,1,4,2,5,5,6,3,3,0]
 print(fun(nums))
