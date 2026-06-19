@@ -1,0 +1,183 @@
+TRESS
+*Binary Tree-->A tree having 1 or 2 nodes but not more than 2 nodes  for a parent node is called binary tree
+*height=(right tree) - (left tree)
+
+*Binary search tree---->A tree where left tree is less than base node and right tree is greater than base node
+*Types of binary tree:
+1.balanced BST-->the height (difference of right and left tree )is not greater than 1
+2.unbalanced tree--->the height tree is greater than 2
+*height of tree complexity is log n
+
+*No.of edges=No.of nodes-1
+-->Preorder(root,left,right)
+--->inorder(left,root,right)
+--->postorder(right,left,root)
+--->level order traversal
+--->left view and right view
+--->height of bst
+--->check bst or not
+---->insert a node in bst
+---->vertical view of binart tree
+--->odd and even level diff gfg
+--->reverse level order
+--->merge 2 binary trees
+--->path to given node(interview bit in youtube)
+    -->root to leaf path sum in gfg
+
+                 
+
+
+
+                    GRAPHS
+*Types of graphs:
+1.undirected graph --->connection has 2 directions
+2.directed  --->restricted either 1 or 2 directions
+3.weighted graph  -->each edge has some value
+4.unweighted graph 
+5.cyclic
+6.Acyclic
+
+
+
+
+                   BINARY SEARCH ALGORITHM
+*best time complexity-->o(1)   when element finds at first
+*Avg case time compl--->o(log(n))
+*worst case   --->o(log(n))
+*Space complexity --->o(1)   no extra space is required
+
+def fun(arr,target):
+    left=0
+    right=len(arr)-1
+    while left<=right:
+        mid=(right+left)//2
+        if arr[mid]==target:
+            return mid
+        elif arr[mid]<target:
+            left=mid+1
+        else:
+            right=mid-1
+    return -1
+
+n=int(input())
+arr=list(map(int,input().split()))
+target=int(input())
+print(fun(arr,target))
+
+
+  
+                     BUBBLE SORT
+*Bubble sort is used to compare adjacent elements and sort the array
+*In each iteration every last element is sorted and process repeats
+
+*best time complexity-->o(n)  when arr is sorted in first iteration
+*Avg case time compl--->o(n**2)
+*worst case   --->o(n**2)
+*Space complexity --->O(1)
+
+
+def fun(arr):
+    for iter in range(len(arr)):
+        #len(arr)-1-iter is bcz last element in every iteration is sorted so we no need to visit that
+        for i in range(len(arr)-1-iter):
+            if arr[i]>arr[i+1]:
+                arr[i],arr[i+1]=arr[i+1],arr[i]
+                print(arr)
+    return arr
+n=int(input())
+arr=list(map(int,input().split()))
+print(fun(arr))
+
+
+                   SELECTION SORT
+*It selects the smallest element from a unsorted list in each iteration and places that element at beginning of the sorted list
+
+*best time complexity-->o(1)   when element finds at first
+*Avg case time compl--->o(n**2)
+*worst case   --->o(n**2)
+*Space complexity --->o(1)   no extra space is required
+
+def fun(arr):
+   
+    for i in range(len(arr)-1):
+        mini=i
+        for j in range(mini+1,len(arr)):
+            if arr[j]<arr[mini]:
+                mini=j
+        arr[i],arr[mini]=arr[mini],arr[i]
+                #print(arr)
+    return arr
+                
+   
+# n=int(input())
+# arr=list(map(int,input().split()))
+arr=[2,23,9,54,18]
+print(fun(arr))
+
+
+
+                   SUBARRAYS AND SUBSETS
+1.subarray with given sum(no size is given)
+2.smallest subarray with sum greater than x(no size is given)
+3.maximum of all subarrays of size k
+4.subarray with sum 0
+5.Longest subarray with sum k -->map
+6.Longest subarray with sum 0 --->map
+7.kadnes algorithm-->subarray with maximum sum
+8.longest subarray with sum divisble by k
+9.count of subarrays---gfg
+
+
+
+
+//longest subarray of size k  in O(n^3)
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int arr[n],key;
+    int maxi=INT_MIN;
+    for(int i=0;i<n;i++) cin>>arr[i];
+    cin>>key;
+    for(int i=0;i<n;i++){
+        for(int j=i;j<n;j++){
+            int s=0;
+            for(int k=i;k<=j;k++){
+                s+=arr[k];
+            }
+            if(s==key) maxi=max(maxi,abs(i-j)+1);
+        }
+    }
+    cout<<maxi;
+
+    return 0;
+}
+o/p:
+10
+1 2 3 1 1 1 1 4 2 3
+3
+3
+_______________________
+//longest subarray of sum k in O(n^2)
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int arr[n],key;
+    int maxi=INT_MIN;
+    for(int i=0;i<n;i++) cin>>arr[i];
+    cin>>key;
+    for(int i=0;i<n;i++){
+        int s=0;
+        for(int j=i;j<n;j++){
+             s+=arr[j];
+             if(s==key) maxi=max(maxi,abs(i-j)+1);
+        }
+    }
+    cout<<maxi;
+
+    return 0;
+}
+_____
